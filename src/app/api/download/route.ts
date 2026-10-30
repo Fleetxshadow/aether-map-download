@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   const externalUrl =
     process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL ||
-    'https://github.com/Fleetxshadow/aether-map-download/releases/download/v1.0.0/AETHER-Release.apk';
+    'https://drive.usercontent.google.com/download?id=1ghc8rX8bSV_sZTf2wJx6cTWdRV9wKvyq&export=download&confirm=t';
 
   return NextResponse.redirect(externalUrl, 302);
 }

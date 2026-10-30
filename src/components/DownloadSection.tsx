@@ -159,18 +159,30 @@ export function DownloadSection() {
                   </div>
                 </div>
 
-                {/* Secondary Backup Mirror */}
-                <div className="flex items-center justify-between text-xs font-mono pt-1">
-                  <span className="text-[#5c6859]">Alternative Mirror:</span>
-                  <a
-                    href="https://github.com/Fleetxshadow/aether-map-download/releases/tag/v1.0.0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#38bdf8] hover:text-[#bbf451] transition-colors flex items-center gap-1"
-                  >
-                    <span>GitHub Release Page (v1.0.0)</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+                {/* Secondary Backup Mirrors */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono pt-1 gap-2">
+                  <span className="text-[#5c6859]">Direct Mirrors:</span>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://drive.google.com/file/d/1ghc8rX8bSV_sZTf2wJx6cTWdRV9wKvyq/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#38bdf8] hover:text-[#bbf451] transition-colors flex items-center gap-1"
+                    >
+                      <span>Google Drive View</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                    <span className="text-[#2a382c]">·</span>
+                    <a
+                      href="https://github.com/Fleetxshadow/aether-map-download/releases/tag/v1.0.0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#95a591] hover:text-[#bbf451] transition-colors flex items-center gap-1"
+                    >
+                      <span>GitHub Release</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
               </div>
 

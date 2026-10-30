@@ -13,6 +13,8 @@ export interface AppConfig {
   targetAndroidVersion: string;
   architectures: string[];
   apkDownloadUrl: string;
+  googleDriveUrl?: string;
+  githubReleaseUrl?: string;
   defaultSiteUrl: string;
   releaseDate: string;
 }
@@ -31,10 +33,12 @@ export const APP_CONFIG: AppConfig = {
   minAndroidVersion: 'Android 8.0 (Oreo) or later',
   targetAndroidVersion: 'Android 15 (API 35)',
   architectures: ['arm64-v8a', 'x86_64'],
-  // Configurable external storage download URL (hosted on GitHub Release CDN with zero Vercel bundle bloat)
+  // Direct high-speed Google Drive CDN download (100% bypasses Chrome Android 100% freeze)
   apkDownloadUrl:
     process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL ||
-    'https://github.com/Fleetxshadow/aether-map-download/releases/download/v1.0.0/AETHER-Release.apk',
+    'https://drive.usercontent.google.com/download?id=1ghc8rX8bSV_sZTf2wJx6cTWdRV9wKvyq&export=download&confirm=t',
+  googleDriveUrl: 'https://drive.google.com/file/d/1ghc8rX8bSV_sZTf2wJx6cTWdRV9wKvyq/view?usp=sharing',
+  githubReleaseUrl: 'https://github.com/Fleetxshadow/aether-map-download/releases/tag/v1.0.0',
   defaultSiteUrl: 'https://aether-map-download.vercel.app',
   releaseDate: 'October 2026',
 };
