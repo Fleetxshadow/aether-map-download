@@ -31,11 +31,10 @@ export const APP_CONFIG: AppConfig = {
   minAndroidVersion: 'Android 8.0 (Oreo) or later',
   targetAndroidVersion: 'Android 15 (API 35)',
   architectures: ['arm64-v8a', 'x86_64'],
-  // Configurable external storage download URL (e.g. Cloudflare R2 bucket public endpoint)
-  // Can be overridden via NEXT_PUBLIC_APK_DOWNLOAD_URL in Vercel environment settings
+  // Configurable external storage download URL (hosted on GitHub Release CDN with zero Vercel bundle bloat)
   apkDownloadUrl:
     process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL ||
-    'https://pub-aether-map-storage.r2.dev/AETHER-Release.apk',
+    'https://github.com/Fleetxshadow/aether-map-download/releases/download/v1.0.0/AETHER-Release.apk',
   defaultSiteUrl: 'https://aether-map-download.vercel.app',
   releaseDate: 'October 2026',
 };
