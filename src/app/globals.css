@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-deep: #080c09;
+    --bg-surface: #0e1410;
+    --bg-surface-elevated: #151d16;
+    --bg-surface-hover: #1c271e;
+    
+    --brand-lime: #bbf451;
+    --brand-lime-glow: rgba(187, 244, 81, 0.25);
+    --brand-lime-dim: #8fa843;
+    
+    --brand-amber: #ffb347;
+    --brand-amber-glow: rgba(255, 179, 71, 0.25);
+    
+    --brand-cyan: #38bdf8;
+    --brand-cyan-glow: rgba(56, 189, 248, 0.25);
+    
+    --border-subtle: #1e281f;
+    --border-medium: #2a382c;
+    --border-highlight: #425845;
+    
+    --text-primary: #f2f7ec;
+    --text-muted: #95a591;
+    --text-dim: #5c6859;
+    
+    --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080c09;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a382c;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bbf451;
+  }
+}
+
+/* Background grid & HUD elements */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(187, 244, 81, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(187, 244, 81, 0.035) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(187, 244, 81, 0.08) 1px, transparent 1px);
+}
+
+.radar-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(187, 244, 81, 0.12) 0%, transparent 60%);
+}
+
+.radar-glow-cyan {
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+}
+
+/* Tactical corner markers */
+.corner-bracket {
+  position: relative;
+}
+.corner-bracket::before,
+.corner-bracket::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--brand-lime);
+  pointer-events: none;
+}
+.corner-bracket::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+.corner-bracket::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* Pulsing beacon */
+@keyframes beacon-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.beacon-ring {
+  animation: beacon-pulse 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+/* Scanline subtle sweep */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
