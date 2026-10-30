@@ -115,11 +115,12 @@ export function DownloadSection() {
               </div>
 
               {/* Big Prominent Download Button */}
-              <div className="pt-2">
+              <div className="pt-2 space-y-3">
                 <a
                   href={APP_CONFIG.apkDownloadUrl}
-                  download="AETHER-Release.apk"
-                  className="group relative flex items-center justify-between bg-[#bbf451] hover:bg-[#c9f868] text-[#080c09] p-5 sm:p-6 rounded-2xl font-bold transition-all duration-200 shadow-xl shadow-[#bbf451]/20 hover:shadow-[#bbf451]/35 hover:translate-y-[-2px] active:translate-y-[0px]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center justify-between bg-[#bbf451] hover:bg-[#c9f868] text-[#080c09] p-5 sm:p-6 rounded-2xl font-bold transition-all duration-200 shadow-xl shadow-[#bbf451]/20 hover:shadow-[#bbf451]/35 hover:translate-y-[-2px] active:translate-y-[0px] cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
                     <div className="bg-[#080c09] text-[#bbf451] p-3 rounded-xl group-hover:scale-110 transition-transform">
@@ -127,7 +128,7 @@ export function DownloadSection() {
                     </div>
                     <div className="text-left">
                       <div className="text-[11px] font-mono tracking-widest uppercase text-[#080c09]/80">
-                        External Object Storage Distribution
+                        Primary Release CDN
                       </div>
                       <div className="text-xl sm:text-2xl font-['Barlow_Condensed'] uppercase tracking-wider font-extrabold text-[#080c09]">
                         Download Android APK
@@ -144,6 +145,33 @@ export function DownloadSection() {
                     </span>
                   </div>
                 </a>
+
+                {/* Android Finalization Notice */}
+                <div className="p-3.5 rounded-xl bg-[#ffb347]/10 border border-[#ffb347]/30 text-xs text-[#ffb347] flex items-start gap-2.5">
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                  <div className="space-y-0.5">
+                    <span className="font-bold font-mono uppercase tracking-wide block">
+                      Android Finalization Note:
+                    </span>
+                    <span className="text-[#f2f7ec]/90 leading-relaxed block text-[11px]">
+                      When the download reaches 100%, Chrome or your Android notification bar may display: <em>&quot;File might be harmful. Keep anyway?&quot;</em> Tap <strong>&quot;Download anyway&quot;</strong> or <strong>&quot;Keep&quot;</strong> to finalize the file on your device.
+                    </span>
+                  </div>
+                </div>
+
+                {/* Secondary Backup Mirror */}
+                <div className="flex items-center justify-between text-xs font-mono pt-1">
+                  <span className="text-[#5c6859]">Alternative Mirror:</span>
+                  <a
+                    href="https://github.com/Fleetxshadow/aether-map-download/releases/tag/v1.0.0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#38bdf8] hover:text-[#bbf451] transition-colors flex items-center gap-1"
+                  >
+                    <span>GitHub Release Page (v1.0.0)</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
 
               {/* Storage Architecture Disclosure */}

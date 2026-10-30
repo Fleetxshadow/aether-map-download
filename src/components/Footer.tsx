@@ -114,8 +114,9 @@ export function Footer() {
 
             <a
               href={APP_CONFIG.apkDownloadUrl}
-              download="AETHER-Release.apk"
-              className="w-full flex items-center justify-center gap-2 bg-[#151d16] hover:bg-[#1e281f] text-[#f2f7ec] hover:text-[#bbf451] border border-[#2a382c] py-2 px-3 rounded-xl font-mono text-xs uppercase tracking-wider transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-[#151d16] hover:bg-[#1e281f] text-[#f2f7ec] hover:text-[#bbf451] border border-[#2a382c] py-2 px-3 rounded-xl font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Direct APK Download</span>

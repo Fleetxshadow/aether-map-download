@@ -86,7 +86,8 @@ export function Hero() {
             >
               <a
                 href={APP_CONFIG.apkDownloadUrl}
-                download="AETHER-Release.apk"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => soundFx.playSuccess()}
                 onMouseEnter={() => soundFx.playClick()}
                 className="group relative flex items-center justify-center gap-3 bg-[#bbf451] hover:bg-[#c9f868] text-[#080c09] px-7 py-4 rounded-xl font-bold text-sm tracking-wider uppercase transition-all duration-200 shadow-xl shadow-[#bbf451]/20 hover:shadow-[#bbf451]/40 hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
@@ -96,7 +97,7 @@ export function Hero() {
                 </div>
                 <div className="text-left">
                   <div className="text-[11px] font-mono tracking-wider text-[#080c09]/80 uppercase leading-none">
-                    Verified Release APK
+                    Direct Release APK
                   </div>
                   <div className="text-base font-extrabold tracking-wide uppercase leading-tight">
                     Download for Android
